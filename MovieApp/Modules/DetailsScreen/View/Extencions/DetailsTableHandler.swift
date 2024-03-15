@@ -54,8 +54,8 @@ extension DetailsViewController :UITableViewDelegate,UITableViewDataSource{
     func setGenresLabelData(label:UILabel){
          var i = 0
          let arr = getMovieGenres()
-        label.text = ""
-        while (i < arr.count){
+         label.text = ""
+         while (i < arr.count){
             if(i > 0){
                 label.text?.append(" . ")
             }
@@ -79,14 +79,14 @@ extension DetailsViewController :UITableViewDelegate,UITableViewDataSource{
     
     func setSecondCellData(cell:SecondCell){
         let movie = DetailsViewModel.getMovie()
-       cell.movie_title.text = movie.original_title
+        cell.movie_title.text = movie.original_title
         cell.like_Label.text = "\(calcVotes().likes)k"
         cell.disLike_label
             .text = "\(calcVotes().disLikes)k"
         displayMovieOverView(cell: cell)
         cell.bindMoreAction = {
-            self.moreBtnFlag = true
-          //  self.myTable.reloadData()
+            self.isMoreBtn(cell: cell)
+            print("print more")
         }
     }
     
@@ -94,6 +94,7 @@ extension DetailsViewController :UITableViewDelegate,UITableViewDataSource{
         let movie = DetailsViewModel.getMovie()
         var arr = movie.overview?.components(separatedBy: ",")
         cell.movie_overView.text = movie.overview
+        isMoreBtn(cell: cell)
 //        if(isMoreBtn(cell: cell)){
 //            cell.movie_overView.text = "\(String(describing: arr?[0])),\(String(describing: arr?[1]))))"
 //        }
@@ -105,16 +106,31 @@ extension DetailsViewController :UITableViewDelegate,UITableViewDataSource{
 //            }
 //        }
     }
-    func isMoreBtn(cell:SecondCell)->Bool{
+//    func isMoreBtn(cell:SecondCell)->Bool{
+//        if(moreBtnFlag ?? false){
+//            cell.more_btn.titleLabel?.text = "Less"
+//            moreBtnFlag = true
+//           // cell.more_btn.titleLabel?.numberOfLines = 0
+//            return true
+//        }
+//        cell.more_btn.titleLabel?.text = "More"
+//        moreBtnFlag = false
+//       // cell.more_btn.titleLabel?.numberOfLines = 2
+//        return false
+//    }
+    func isMoreBtn(cell:SecondCell){
         if(moreBtnFlag ?? false){
             cell.more_btn.titleLabel?.text = "Less"
+            moreBtnFlag = true
            // cell.more_btn.titleLabel?.numberOfLines = 0
-            return true
+    
         }
         cell.more_btn.titleLabel?.text = "More"
+        moreBtnFlag = false
        // cell.more_btn.titleLabel?.numberOfLines = 2
-        return false
+  
     }
+    
     func setFirstCellData(cell:FirstCell){
         setMoviImg(cell: cell)
         let time = calcMovieTime(runTime: detailsViewModel?.details?.runtime ?? 0)
@@ -157,8 +173,8 @@ extension DetailsViewController :UITableViewDelegate,UITableViewDataSource{
     func calcVotes()->(likes:NSString,disLikes:NSString){
         let voteCount :Int = detailsViewModel?.getDetails().vote_count ?? 0
         let voteAverage :Double = detailsViewModel?.getDetails().vote_average ?? 0.0 / 10
-        let likes = (Double(voteCount) * voteAverage / 1000).roundTo1f()
-        let disLikes = ((Double(voteCount) - (Double(voteCount) * voteAverage / 1000)) / 1000) .roundTo1f()
+        var  likes =  (Double(voteCount) * voteAverage / 1000).roundTo1f()
+        var disLikes = ((Double(voteCount) - (Double(voteCount) * voteAverage / 1000)) / 1000) .roundTo1f()
         return (likes,disLikes)
     }
 }

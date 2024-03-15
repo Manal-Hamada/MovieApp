@@ -42,6 +42,7 @@ extension SearchScreen :UICollectionViewDataSource {
     func goToDetailsScreen(movie:Movie) {
         let detailsScreen : DetailsViewController = self.storyboard?.instantiateViewController(withIdentifier: "details_view_controller") as! DetailsViewController
         DetailsViewModel.movie = movie
+        self.searchBar.text = ""
         self.navigationController?.pushViewController(detailsScreen, animated: true)
         
     }

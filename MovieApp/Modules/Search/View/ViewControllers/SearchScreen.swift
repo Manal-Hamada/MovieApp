@@ -8,15 +8,13 @@ class SearchScreen: UIViewController,UICollectionViewDelegate, UISearchBarDelega
     @IBOutlet weak var search_indicator: UIActivityIndicatorView!
     @IBOutlet weak var searchImage: UIImageView!
     @IBOutlet weak var searchBar: UISearchBar!
-    
-    // @IBOutlet weak var segmantsCollectionView: UICollectionView!
     var searchViewModel:SearchViewModel?
     var networkManager:NetworkProtocol?
-    
+    var name : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        name = ""
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -24,13 +22,15 @@ class SearchScreen: UIViewController,UICollectionViewDelegate, UISearchBarDelega
         setupCollectionView()
         networkManager = NetworkManager()
         searchViewModel = SearchViewModel(networkManger: networkManager)
+        self.navigationController?.navigationBar.isHidden = false
+        searchBar.text = DetailsViewModel.movie?.title
         myCollectionview.reloadData()
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        let name = searchText.replacingOccurrences(of: " ", with: "+")
-        if(name.count % 2 == 0){
+        name = searchText.replacingOccurrences(of: " ", with: "+")
+        if((name?.count ?? 0) % 2 == 0){
             search_indicator.startAnimating()
-            searchViewModel?.searchByName(movieName:name )
+            searchViewModel?.searchByName(movieName:name ?? "" )
             searchViewModel?.bindSearchResultToViewController = { [weak self] in
                 DispatchQueue.main.async {
                     self?.search_indicator.stopAnimating()
@@ -45,4 +45,5 @@ class SearchScreen: UIViewController,UICollectionViewDelegate, UISearchBarDelega
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
+    
 }

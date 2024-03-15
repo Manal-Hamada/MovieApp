@@ -25,7 +25,7 @@ class DetailsViewController:UIViewController{
         myTable.contentInsetAdjustmentBehavior = .never
         self.navigationController?.navigationBar.isHidden = true
         registerCells()
-       bindDetails(movie: DetailsViewModel.getMovie())
+        bindDetails(movie: DetailsViewModel.getMovie())
     }
 
     func bincast(){

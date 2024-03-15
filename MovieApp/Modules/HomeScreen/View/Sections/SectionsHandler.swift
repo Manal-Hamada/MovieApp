@@ -17,10 +17,10 @@ extension HomeViewController {
     
     func setScrollingDirection(direction:String) ->Bool{
         switch (direction){
-        case "h" :
-            return true
-        default :
-            return false
+             case "h" :
+                return true
+            default :
+                 return false
         }
     }
     
@@ -46,20 +46,20 @@ extension HomeViewController {
     }
     
     func drawTopSection() -> NSCollectionLayoutSection{
-        let group = setGroup(width: 1, height: 250, item: setItem(width: 0.5, height: 250), direction: "h")
+        let group = setGroup(width: 1, height: 270, item: setItem(width: 0.5, height: 270), direction: "h")
         let section = setSection(group: group, headerSupplementary:setHeader(width: 1.0, height: 45))
         section.orthogonalScrollingBehavior = .continuous
         return section
         
     }
     func drawPopularSection() -> NSCollectionLayoutSection{
-        let group = setGroup(width: 1, height:100 , item: setItem(width: 0.5, height: 110), direction: "h")
+        let group = setGroup(width: 1, height:170 , item: setItem(width: 0.5, height: 170), direction: "h")
         let section = setSection(group: group, headerSupplementary:setHeader(width: 1.0, height: 45))
         section.orthogonalScrollingBehavior = .continuous
         return section
     }
     func drawUpcomingSection() -> NSCollectionLayoutSection{
-        let group = setGroup(width: 1, height:100 , item: setItem(width: 0.33, height: 110), direction: "h")
+        let group = setGroup(width: 1, height:170 , item: setItem(width: 1, height: 170), direction: "h")
         let section = setSection(group: group, headerSupplementary:setHeader(width: 1.0, height: 45))
         section.orthogonalScrollingBehavior = .continuous
         return section

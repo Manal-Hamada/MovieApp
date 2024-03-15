@@ -87,10 +87,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="bg"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="lBR-72-Zdg"/>
-                    <navigationItem key="navigationItem" title="Movies" id="FDa-an-rTY">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="ylo-Tv-VCP"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Movies" id="FDa-an-rTY"/>
                     <connections>
                         <outlet property="myCollectionview" destination="MNd-aF-KXS" id="rX0-mT-Qgs"/>
                         <outlet property="searchBar" destination="lZf-kh-XB5" id="RI2-R5-4tr"/>
@@ -100,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="503" y="1468"/>
+            <point key="canvasLocation" x="1572" y="732"/>
         </scene>
         <!--Item-->
         <scene sceneID="iPK-oN-82W">
@@ -125,7 +122,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p4R-RY-ENP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1344" y="732"/>
+            <point key="canvasLocation" x="2492.3664122137402" y="731.69014084507046"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Dep-y5-m4h">
@@ -191,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WHp-f4-6xA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2804" y="600"/>
+            <point key="canvasLocation" x="3730.5343511450378" y="600"/>
         </scene>
         <!--Profile-->
         <scene sceneID="e99-a8-8De">
@@ -249,16 +246,33 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hO3-rL-sR7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2064.8854961832062" y="1467.605633802817"/>
+            <point key="canvasLocation" x="2088" y="1468"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="JbK-3E-CHO">
+            <objects>
+                <viewController id="Z7L-6T-XaX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0aA-K6-V65">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="hRD-Us-ecz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="heart.fill" catalog="system" id="G7M-L3-dYq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yMl-mq-cYd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="512" y="1468"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WlQ-Hx-mxH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vSn-4G-IWB" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RDI-Qc-edU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorImage="chevron.backward.circle" catalog="system" id="RDI-Qc-edU">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.87391520540000001" green="0.48418421610000001" blue="0.97523039580000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" red="0.93934530019999996" green="0.73755818650000005" blue="0.91004966030000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="19"/>
@@ -455,27 +469,52 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="MeX-Jy-XQi" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Movies App" id="VGw-kY-6Er"/>
+                    <navigationItem key="navigationItem" title="Movies App" id="VGw-kY-6Er">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="VxN-W3-yQ5">
+                            <color key="tintColor" red="0.8132340119" green="0.28313304490000002" blue="0.86071654040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="VTo-Sf-OP1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gTU-n0-AIa">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="1" green="0.5409764051" blue="0.84731429820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="selectedImageTintColor" name="bg"/>
+                        <color key="backgroundColor" name="bg"/>
+                        <color key="selectedImageTintColor" red="0.87508608359999995" green="0.41887234270000001" blue="0.97523039580000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="4N4-c2-9K3" kind="relationship" relationship="viewControllers" id="luw-M8-seY"/>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="UzY-zw-PNQ"/>
-                        <segue destination="Sxt-oZ-F0I" kind="relationship" relationship="viewControllers" id="Uiv-mk-o6V"/>
+                        <segue destination="Z7L-6T-XaX" kind="relationship" relationship="viewControllers" id="FiL-3T-hfR"/>
+                        <segue destination="Sxt-oZ-F0I" kind="relationship" relationship="viewControllers" id="1IK-MS-4rG"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a6b-p8-cJF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="102" y="732"/>
         </scene>
+        <!--Search-->
+        <scene sceneID="8zk-sl-aar">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7aa-C0-KKJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="lBR-72-Zdg"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="g6o-SG-QBm">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9GS-v3-fSa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="826.71755725190837" y="731.69014084507046"/>
+        </scene>
     </scenes>
     <resources>
         <image name="africano" width="199" height="253"/>
+        <image name="chevron.backward.circle" catalog="system" width="128" height="123"/>
         <image name="cover" width="300" height="300"/>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
         <image name="list.bullet.clipboard.fill" catalog="system" width="103" height="128"/>
         <image name="lock.slash.fill" catalog="system" width="121" height="128"/>
