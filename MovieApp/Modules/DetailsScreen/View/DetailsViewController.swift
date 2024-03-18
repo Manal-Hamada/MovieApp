@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import Kingfisher
 
+
 class DetailsViewController:UIViewController{
     
     @IBOutlet weak var indicator: UIActivityIndicatorView!
@@ -26,6 +27,8 @@ class DetailsViewController:UIViewController{
         self.navigationController?.navigationBar.isHidden = true
         registerCells()
         bindDetails(movie: DetailsViewModel.getMovie())
+        bindVideos(movie: DetailsViewModel.getMovie())
+        //detailsViewModel?.loadVideos(movie: DetailsViewModel.getMovie())
     }
 
     func bincast(){
@@ -33,6 +36,15 @@ class DetailsViewController:UIViewController{
         detailsViewModel?.bindCastToViewController = {[weak self] in
             DispatchQueue.main.async {
                 print("\(String(describing: self?.detailsViewModel?.getAnActor(index: 0)?.name))")
+            }
+        }
+    }
+    func bindVideos(movie:Movie){
+        detailsViewModel?.loadVideos(movie: movie)
+        detailsViewModel?.bindMovieVideosToViewController = {
+            [weak self] in DispatchQueue.main.async {
+                self?.detailsViewModel?.searchForTrailers(response:self?.detailsViewModel?.getVideos() ?? [] )
+                print("trailers count = \( self?.detailsViewModel?.trailers?.count ?? 0) ")
             }
         }
     }

@@ -21,48 +21,54 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imageView:JKJ-8o-zJC:image" translatesAutoresizingMaskIntoConstraints="NO" id="JKJ-8o-zJC">
                         <rect key="frame" x="0.0" y="0.0" width="354" height="269"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeT-SA-aLP">
-                        <rect key="frame" x="145.66666666666663" y="254" width="176.33333333333337" height="30"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeT-SA-aLP">
+                        <rect key="frame" x="192" y="254" width="68" height="35"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="zDN-dw-beb"/>
+                            <constraint firstAttribute="height" constant="35" id="zDN-dw-beb"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLN-Nk-Inj">
-                        <rect key="frame" x="31.999999999999993" y="254" width="120.33333333333331" height="30"/>
+                        <rect key="frame" x="123" y="254" width="69" height="35"/>
                         <color key="backgroundColor" red="0.8132340119" green="0.28313304490000002" blue="0.86071654040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="61D-Vd-06N"/>
+                            <constraint firstAttribute="height" constant="35" id="61D-Vd-06N"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PBF-eZ-Ofu">
-                        <rect key="frame" x="192.33333333333337" y="254" width="145.66666666666663" height="30"/>
+                        <rect key="frame" x="192" y="254" width="147" height="35"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="BM5-G8-2cv"/>
+                            <constraint firstAttribute="height" constant="35" id="BM5-G8-2cv"/>
                         </constraints>
                         <state key="normal" title="Button"/>
-                        <buttonConfiguration key="configuration" style="filled" image="video" title="   watch trailer" cornerStyle="capsule">
-                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
+                        <buttonConfiguration key="configuration" style="filled" image="video" title=" watch trailer" cornerStyle="capsule">
+                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
                             <color key="baseForegroundColor" red="0.8132340119" green="0.28313304490000002" blue="0.86071654040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </buttonConfiguration>
+                        <connections>
+                            <action selector="watchTrailerAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="E7m-8n-yUN"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="neo-Oj-Fbd">
-                        <rect key="frame" x="16.000000000000007" y="254" width="124.66666666666669" height="30"/>
+                        <rect key="frame" x="16" y="254" width="151" height="35"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="G3e-Bj-W1B"/>
+                            <constraint firstAttribute="height" constant="35" id="G3e-Bj-W1B"/>
                         </constraints>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="filled" image="play" title="   watch now" cornerStyle="capsule">
-                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="14"/>
+                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
                             <color key="baseBackgroundColor" red="0.8132340119" green="0.28313304490000002" blue="0.86071654040000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </buttonConfiguration>
+                        <connections>
+                            <action selector="watchMovieAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="nU4-oZ-WmQ"/>
+                        </connections>
                     </button>
                     <view alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lqm-BF-cco">
                         <rect key="frame" x="20" y="215" width="153" height="32"/>
@@ -97,7 +103,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zkd-lB-5h2">
-                                <rect key="frame" x="115" y="6" width="30" height="23"/>
+                                <rect key="frame" x="115" y="5" width="30" height="23"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -126,45 +132,54 @@
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="3h 12m" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJi-0v-dOP">
-                        <rect key="frame" x="292.66666666666669" y="292" width="41.333333333333314" height="23"/>
+                        <rect key="frame" x="292.66666666666669" y="297" width="41.333333333333314" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Action . Drama . Comedy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dzn-89-cde">
-                        <rect key="frame" x="26" y="291" width="140.66666666666666" height="24"/>
+                        <rect key="frame" x="26" y="296" width="140.66666666666666" height="19"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Teq-lp-fHy" customClass="YTPlayerView">
+                        <rect key="frame" x="0.0" y="0.0" width="354" height="254"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" name="bg"/>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="PBF-eZ-Ofu" secondAttribute="bottom" constant="35" id="0n2-xy-hMC"/>
+                    <constraint firstAttribute="bottom" secondItem="PBF-eZ-Ofu" secondAttribute="bottom" constant="30" id="0n2-xy-hMC"/>
                     <constraint firstItem="RJi-0v-dOP" firstAttribute="top" secondItem="PBF-eZ-Ofu" secondAttribute="bottom" constant="8" id="3xR-z4-VBg"/>
-                    <constraint firstItem="SeT-SA-aLP" firstAttribute="leading" secondItem="neo-Oj-Fbd" secondAttribute="trailing" constant="5" id="59d-KP-Zv8"/>
+                    <constraint firstItem="Teq-lp-fHy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="4Q0-bM-dtJ"/>
                     <constraint firstItem="JKJ-8o-zJC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="5FK-Gs-cym"/>
                     <constraint firstItem="Dzn-89-cde" firstAttribute="top" secondItem="SeT-SA-aLP" secondAttribute="bottom" constant="7" id="5xV-xQ-td0"/>
                     <constraint firstAttribute="bottom" secondItem="JKJ-8o-zJC" secondAttribute="bottom" constant="50" id="83t-gL-h3a"/>
                     <constraint firstAttribute="bottom" secondItem="Dzn-89-cde" secondAttribute="bottom" constant="4" id="8wd-Bn-vj6"/>
+                    <constraint firstItem="hLN-Nk-Inj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="123" id="9yi-Q0-1xL"/>
                     <constraint firstItem="Dzn-89-cde" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="26" id="AG1-x7-gYz"/>
                     <constraint firstItem="unR-Rg-8Vn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="50" id="Bbh-HR-So8"/>
                     <constraint firstItem="unR-Rg-8Vn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="6" id="Bqk-lc-oJ8"/>
+                    <constraint firstItem="Teq-lp-fHy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="DXN-xE-Gpg"/>
+                    <constraint firstItem="SeT-SA-aLP" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.19209" id="DsY-Kc-kdG"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Lqm-BF-cco" secondAttribute="trailing" priority="750" constant="161" id="Ebu-fL-Ac6"/>
-                    <constraint firstAttribute="trailing" secondItem="SeT-SA-aLP" secondAttribute="trailing" constant="32" id="JX3-o2-dlS"/>
-                    <constraint firstAttribute="trailing" secondItem="PBF-eZ-Ofu" secondAttribute="trailing" constant="16" id="MDd-Eg-2Tp"/>
-                    <constraint firstItem="PBF-eZ-Ofu" firstAttribute="leading" secondItem="hLN-Nk-Inj" secondAttribute="trailing" constant="40" id="N1s-d0-Wkv"/>
+                    <constraint firstAttribute="trailing" secondItem="PBF-eZ-Ofu" secondAttribute="trailing" constant="15" id="MPk-i7-7cV"/>
+                    <constraint firstItem="SeT-SA-aLP" firstAttribute="leading" secondItem="hLN-Nk-Inj" secondAttribute="trailing" id="MhO-Op-LWL"/>
                     <constraint firstAttribute="trailing" secondItem="JKJ-8o-zJC" secondAttribute="trailing" id="OCp-mL-cOR"/>
-                    <constraint firstAttribute="bottom" secondItem="hLN-Nk-Inj" secondAttribute="bottom" constant="35" id="OXM-Nq-0Ey"/>
+                    <constraint firstAttribute="bottom" secondItem="hLN-Nk-Inj" secondAttribute="bottom" constant="30" id="OXM-Nq-0Ey"/>
                     <constraint firstAttribute="bottom" secondItem="RJi-0v-dOP" secondAttribute="bottom" constant="4" id="Qhc-RM-2f8"/>
-                    <constraint firstAttribute="bottom" secondItem="neo-Oj-Fbd" secondAttribute="bottom" constant="35" id="XXs-pM-3yB"/>
-                    <constraint firstAttribute="bottom" secondItem="SeT-SA-aLP" secondAttribute="bottom" constant="35" id="c1i-6K-F2k"/>
+                    <constraint firstAttribute="bottom" secondItem="neo-Oj-Fbd" secondAttribute="bottom" constant="30" id="XXs-pM-3yB"/>
+                    <constraint firstAttribute="bottom" secondItem="SeT-SA-aLP" secondAttribute="bottom" constant="30" id="c1i-6K-F2k"/>
+                    <constraint firstItem="PBF-eZ-Ofu" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.415254" id="cVu-vx-LV3"/>
                     <constraint firstItem="RJi-0v-dOP" firstAttribute="leading" secondItem="Dzn-89-cde" secondAttribute="trailing" priority="250" constant="126" id="gVr-i0-1OJ"/>
+                    <constraint firstItem="SeT-SA-aLP" firstAttribute="top" secondItem="Teq-lp-fHy" secondAttribute="bottom" id="i1M-db-3xS"/>
                     <constraint firstItem="Lqm-BF-cco" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="id6-XN-YTW"/>
-                    <constraint firstItem="PBF-eZ-Ofu" firstAttribute="leading" secondItem="neo-Oj-Fbd" secondAttribute="trailing" constant="51.666666666666686" id="oeU-Nf-bnv"/>
                     <constraint firstAttribute="trailing" secondItem="RJi-0v-dOP" secondAttribute="trailing" constant="20" id="sSw-GU-s3B"/>
+                    <constraint firstItem="neo-Oj-Fbd" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.426554" id="smh-2B-xJd"/>
+                    <constraint firstAttribute="trailing" secondItem="Teq-lp-fHy" secondAttribute="trailing" id="sou-cy-qUN"/>
+                    <constraint firstItem="hLN-Nk-Inj" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.194915" id="uCP-L9-EwA"/>
                     <constraint firstItem="SeT-SA-aLP" firstAttribute="top" secondItem="Lqm-BF-cco" secondAttribute="bottom" constant="7" id="uEA-u2-8wk"/>
-                    <constraint firstItem="hLN-Nk-Inj" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="uc3-1E-Y4u"/>
                     <constraint firstItem="JKJ-8o-zJC" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="vQd-Tm-iEf"/>
                     <constraint firstItem="neo-Oj-Fbd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="w57-Wf-Nl6"/>
                 </constraints>
@@ -177,6 +192,9 @@
                 <outlet property="movie_hours" destination="RJi-0v-dOP" id="iOp-yc-6zk"/>
                 <outlet property="movie_img" destination="JKJ-8o-zJC" id="hMW-P1-Qy1"/>
                 <outlet property="rating" destination="vji-2e-QL3" id="gp4-Ex-ADd"/>
+                <outlet property="videoPlayer" destination="Teq-lp-fHy" id="huk-fs-XMd"/>
+                <outlet property="watchMovie" destination="neo-Oj-Fbd" id="gL3-CR-Z6N"/>
+                <outlet property="watchTrailer" destination="PBF-eZ-Ofu" id="dUv-ab-ni8"/>
                 <outlet property="year" destination="kSY-db-IeV" id="ZAR-i4-ciK"/>
             </connections>
             <point key="canvasLocation" x="201.52671755725191" y="25.704225352112676"/>
@@ -47455,6 +47473,9 @@ AAAAAAAAAAAAAAAAACtCLA
         <namedColor name="segColor1">
             <color red="1" green="0.25299999117851257" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

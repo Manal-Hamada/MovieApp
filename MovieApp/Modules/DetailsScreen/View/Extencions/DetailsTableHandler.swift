@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import youtube_ios_player_helper
 extension DetailsViewController :UITableViewDelegate,UITableViewDataSource{
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -86,49 +87,27 @@ extension DetailsViewController :UITableViewDelegate,UITableViewDataSource{
         displayMovieOverView(cell: cell)
         cell.bindMoreAction = {
             self.isMoreBtn(cell: cell)
-            print("print more")
+            self.myTable.reloadData()
         }
     }
     
     func displayMovieOverView(cell:SecondCell){
         let movie = DetailsViewModel.getMovie()
-        var arr = movie.overview?.components(separatedBy: ",")
         cell.movie_overView.text = movie.overview
-        isMoreBtn(cell: cell)
-//        if(isMoreBtn(cell: cell)){
-//            cell.movie_overView.text = "\(String(describing: arr?[0])),\(String(describing: arr?[1]))))"
-//        }
-//        else{
-//            var i = 0
-//            cell.movie_overView.text = ""
-//            while(i<arr?.count ?? 0){
-//                cell.movie_overView.text! += "\(arr?[i])"
-//            }
-//        }
     }
-//    func isMoreBtn(cell:SecondCell)->Bool{
-//        if(moreBtnFlag ?? false){
-//            cell.more_btn.titleLabel?.text = "Less"
-//            moreBtnFlag = true
-//           // cell.more_btn.titleLabel?.numberOfLines = 0
-//            return true
-//        }
-//        cell.more_btn.titleLabel?.text = "More"
-//        moreBtnFlag = false
-//       // cell.more_btn.titleLabel?.numberOfLines = 2
-//        return false
-//    }
     func isMoreBtn(cell:SecondCell){
-        if(moreBtnFlag ?? false){
-            cell.more_btn.titleLabel?.text = "Less"
-            moreBtnFlag = true
-           // cell.more_btn.titleLabel?.numberOfLines = 0
-    
+        if(moreBtnFlag == false){
+            prepareMoreBtn(title: "Less", isMore: true, numOfLines: 0, cell: cell)
         }
-        cell.more_btn.titleLabel?.text = "More"
-        moreBtnFlag = false
-       // cell.more_btn.titleLabel?.numberOfLines = 2
-  
+        else{
+            prepareMoreBtn(title: "More", isMore: false, numOfLines: 2, cell: cell)
+        }
+    }
+     
+    func prepareMoreBtn(title:String,isMore:Bool,numOfLines:Int,cell:SecondCell){
+        cell.more_btn.setTitle(title, for: .normal)
+        moreBtnFlag = isMore
+        cell.movie_overView.numberOfLines = numOfLines
     }
     
     func setFirstCellData(cell:FirstCell){
@@ -138,6 +117,12 @@ extension DetailsViewController :UITableViewDelegate,UITableViewDataSource{
         setGenresLabelData(label: cell.genres)
         setContainerLabels(cell: cell)
         cell.labels_container.layer.cornerRadius = 15
+        cell.didWatchTrailerBtnPressesd = {
+            cell.videoPlayer .isHidden = false
+            let videoId = "\(YOUTUBE_VIDEO_HEADER)\(self.detailsViewModel?.getMovieTrailers()[0].key ?? "")"//"https://www.youtube.com/watch?v=bsM1qdGAVbU"
+//
+              cell.videoPlayer.load(withVideoId:self.detailsViewModel?.getMovieTrailers()[0].key ?? "")
+        }
     }
     
     func setContainerLabels(cell:FirstCell){

@@ -14,16 +14,18 @@ class DetailsViewModel{
     var personData : [Person]?
     var bindImagesToViewController : (()->()) = {}
     var bindCastToViewController : (()->()) = {}
+    var bindMovieVideosToViewController : (()->()) = {}
     var bindMovieDetailsToViewController : (()->()) = {}
     static var movie:Movie?
     var images: [Image]?
     var details: MovieDetails?
     var cast: [Cast]?
-    var videos : [video]?
-    
+    var videos : [Video]?
+    var trailers :[Video]?
     
     init(networkManager:NetworkProtocol){
         self.networkManager = networkManager
+        trailers = []
     }
     
     func loadImages(movie:Movie){
@@ -49,6 +51,19 @@ class DetailsViewModel{
             self.bindMovieDetailsToViewController()
         })
     }
+    func loadVideos(movie:Movie){
+        networkManager?.fetchData(baseUrl: Movie_BASE_URL, endPoint: .videos(movieId: movie.id ?? 0), compilitionHandler:{ (response:VideosResponse?)in
+            guard response != nil else{
+                print("No Response")
+                return
+            }
+            self.videos = response?.results
+            print("Movie videos loaded\n")
+           // self.searchForTrailers(response: response?.results ?? [])
+            self.bindMovieVideosToViewController()
+            print("videos count = \(self.videos?.count ?? 0)")
+        })
+    }
     func fetchCrew(moviId:Int){
         networkManager?.fetchData(baseUrl: Movie_BASE_URL, endPoint: .cast(movieId: moviId), compilitionHandler: {(response:castResponse?) in
             guard response != nil else{
@@ -59,6 +74,17 @@ class DetailsViewModel{
             self.bindCastToViewController()
         })
     }
+    func searchForTrailers(response:[Video]){
+        
+        var i = 0
+        while(i < response.count){
+            if(response[i].type == .trailer){
+                trailers?.append(response[i])
+            }
+            i+=1
+        }
+    }
+    
     func getDetails()-> MovieDetails{
         return details ?? MovieDetails(backdrop_path: "", genres: [], revenue: 0, runtime: 0,voteAverage: 0.0)
     }
@@ -71,8 +97,14 @@ class DetailsViewModel{
     func getCastCount()->Int{
         return cast?.count ?? 0
     }
+    func getVideos()->[Video]{
+        return videos ?? []
+    }
     func getAnActor(index:Int)->Cast?{
         return cast?[index]
+    }
+    func getMovieTrailers()->[Video]{
+        return trailers ?? []
     }
     static func getMovie()->Movie{
         return movie!     }

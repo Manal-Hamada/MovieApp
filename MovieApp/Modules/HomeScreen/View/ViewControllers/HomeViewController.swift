@@ -25,6 +25,10 @@ class HomeViewController: UIViewController , UICollectionViewDelegate,UICollecti
         bindNowPlayingMovies()
         bindUpcomingMovies()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.navigationController?.navigationBar.isHidden = false
+    }
     
     func bindPopularMovies(){
         homeViewModel?.loadPopularMovies()

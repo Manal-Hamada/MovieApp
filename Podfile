@@ -7,6 +7,7 @@ target 'MovieApp' do
 
   # Pods for MovieApp
   pod 'CardSlider'
-
+  pod 'YoutubePlayerHelper'
+  pod "youtube-ios-player-helper"
 
 end

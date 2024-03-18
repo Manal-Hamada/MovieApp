@@ -8,12 +8,12 @@
 import Foundation
 struct VideosResponse: Decodable {
     let id: Int
-    let results: [video]
+    let results:[Video]?
 }
 
-struct video: Decodable {
-    let iso639_1: ISO639_1
-    let iso3166_1: ISO3166_1
+struct Video: Decodable {
+//    let iso639_1: ISO639_1
+//    let iso3166_1: ISO3166_1
     let name, key: String
     let site: Site
     let size: Int
@@ -22,8 +22,8 @@ struct video: Decodable {
     let publishedAt, id: String
 
     enum CodingKeys: String, CodingKey {
-        case iso639_1 = "language"
-        case iso3166_1 = "state"
+//        case iso639_1 = "language"
+//        case iso3166_1 = "state"
         case name, key, site, size, type, official
         case publishedAt = "published_at"
         case id
@@ -38,13 +38,15 @@ enum ISO639_1: String, Decodable {
     case en = "en"
 }
 
-enum Site: String, Codable {
+enum Site: String, Decodable {
     case youTube = "YouTube"
 }
 
-enum TypeEnum: String, Codable {
+enum TypeEnum: String, Decodable {
     case clip = "Clip"
     case featurette = "Featurette"
     case teaser = "Teaser"
     case trailer = "Trailer"
+    case bloopers = "Bloopers"
+    case behind_the_scens = "Behind the Scenes"
 }

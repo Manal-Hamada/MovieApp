@@ -13,6 +13,7 @@ let Movie_SEARCH_BASE_URL = "https://api.themoviedb.org/3/search/movie"
 let GENRE_BASE_URL = "https://api.themoviedb.org/3/genre/movie/"
 let SEARCH_BASE_URL = "https://api.themoviedb.org/3/"
 let imgHeader = "https://image.tmdb.org/t/p/w500"
+let YOUTUBE_VIDEO_HEADER = "https://www.youtube.com/watch?v="
 
 enum EndPoints{
     case topRated
@@ -20,6 +21,7 @@ enum EndPoints{
     case popular
     case nowPlaying
     case Ggenrues
+    case videos(movieId:Int)
     case cast(movieId:Int)
     case movie_details(movieId:Int)
     case images(movieId:Int)
@@ -52,6 +54,8 @@ enum EndPoints{
             return "?query=\(name)&"
         case .movie_details(movieId: let movieId):
             return "\(movieId)?"
+        case .videos(movieId: let movieId):
+            return "\(movieId)/videos?"
         }
         }
     }

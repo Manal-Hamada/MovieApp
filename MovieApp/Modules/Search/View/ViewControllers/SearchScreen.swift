@@ -23,8 +23,8 @@ class SearchScreen: UIViewController,UICollectionViewDelegate, UISearchBarDelega
         networkManager = NetworkManager()
         searchViewModel = SearchViewModel(networkManger: networkManager)
         self.navigationController?.navigationBar.isHidden = false
-        searchBar.text = DetailsViewModel.movie?.title
         myCollectionview.reloadData()
+        searchBar.text = name
     }
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         name = searchText.replacingOccurrences(of: " ", with: "+")

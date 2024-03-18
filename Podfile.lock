@@ -1,16 +1,24 @@
 PODS:
   - CardSlider (0.1.0)
+  - youtube-ios-player-helper (1.0.4)
+  - YoutubePlayerHelper (0.1.1)
 
 DEPENDENCIES:
   - CardSlider
+  - youtube-ios-player-helper
+  - YoutubePlayerHelper
 
 SPEC REPOS:
   trunk:
     - CardSlider
+    - youtube-ios-player-helper
+    - YoutubePlayerHelper
 
 SPEC CHECKSUMS:
   CardSlider: 0a8f5f17f5a76701771794b07fdaeddc512358c8
+  youtube-ios-player-helper: e9b97535e816db3152179d84d999bc1807ecd689
+  YoutubePlayerHelper: a43cf5846e933bb66131f68ede5c66ba6e9c47cc
 
-PODFILE CHECKSUM: 83981e0975fbcd64aef89d7e471518ab1ffb3608
+PODFILE CHECKSUM: f94d1f88c66393798ef4349a58934d5f58a8a253
 
 COCOAPODS: 1.12.1
